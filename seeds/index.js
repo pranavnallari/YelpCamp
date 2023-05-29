@@ -29,15 +29,18 @@ const seedDB = async () =>{
             author:'6464733ef64a7edf33eefae7',
             location:`${cities[random1000].city},${cities[random1000].state}`,
             title:`${sample(descriptors)} ${sample(places)}`,
-            image :'https://source.unsplash.com/collection/483251/512x384',
+            images:{
+                url:'https://res.cloudinary.com/dxk0ubbcv/image/upload/v1685279429/YelpCamp/jimmy-conover-J_XuXX9m0KM-unsplash_ozj37s.jpg',
+                filename:'Yelpcamp/jimmy-conover-J_XuXX9m0KM-unsplash_ozj37s'
+            },
             price:price,
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia sint exercitationem praesentium minus accusantium eos magni, repellendus, dolor atque in omnis reiciendis incidunt provident recusandae minima, sequi perspiciatis rem.'
         });
        await camp.save();
     }
 }
-
+/*
 seedDB().then(()=>{
     mongoose.connection.close();
 });
-
+*/
