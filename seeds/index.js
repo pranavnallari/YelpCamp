@@ -26,12 +26,19 @@ const seedDB = async () =>{
         const random1000 = Math.floor(Math.random()*1000);
         const price =Math.floor(Math.random()*500)+1000;
         const camp = new Campground({
-            author:'6464733ef64a7edf33eefae7',
+            author:'647ae23d773ee05878a20a15',
             location:`${cities[random1000].city},${cities[random1000].state}`,
             title:`${sample(descriptors)} ${sample(places)}`,
             images:{
-                url:'https://res.cloudinary.com/dxk0ubbcv/image/upload/v1685279429/YelpCamp/jimmy-conover-J_XuXX9m0KM-unsplash_ozj37s.jpg',
-                filename:'Yelpcamp/jimmy-conover-J_XuXX9m0KM-unsplash_ozj37s'
+                url:'https://res.cloudinary.com/dxk0ubbcv/image/upload/v1685774975/YelpCamp/mxs29ymmubu5cyy8znwk.jpg',
+                filename:'YelpCamp/mxs29ymmubu5cyy8znwk'
+            },
+            geometry :{
+                type:"Point",
+                coordinates:[
+                    cities[random1000].longitude,
+                    cities[random1000].latitude,
+                ]
             },
             price:price,
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia sint exercitationem praesentium minus accusantium eos magni, repellendus, dolor atque in omnis reiciendis incidunt provident recusandae minima, sequi perspiciatis rem.'
@@ -39,8 +46,8 @@ const seedDB = async () =>{
        await camp.save();
     }
 }
-/*
+
 seedDB().then(()=>{
     mongoose.connection.close();
 });
-*/
+

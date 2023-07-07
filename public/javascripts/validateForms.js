@@ -10,6 +10,7 @@
       .forEach(function (form) {
         form.addEventListener('submit', function (event) {
           if (!form.checkValidity()) {
+            alert("YOUVE BEEN FORDED")
             event.preventDefault()
             event.stopPropagation()
           }
